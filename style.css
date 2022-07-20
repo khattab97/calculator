@@ -1,0 +1,16 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 550px;
+    width: 500px;
+    border: 10px gray;
+}
