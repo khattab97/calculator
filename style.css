@@ -22,6 +22,8 @@ body, html {
 }
 
 #display {
+    display: flex;
+    flex-direction: column;
     box-sizing: border-box;
     height: 120px;
     width: 360px;
@@ -30,6 +32,22 @@ body, html {
     padding: 10px 20px;
     background-color: #222426;
 }
+
+#submitted-num{
+    height: 40px;
+    width: 100%;
+}
+
+#active-num{
+    height: 80px;
+    width: 100%;
+    font-size: 50px;
+}
+
+#submitted-num, #active-num {
+    text-align: right;
+}
+
 
 #numbers-operators{
     box-sizing: border-box;
