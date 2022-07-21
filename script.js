@@ -23,9 +23,6 @@ function primeDisplay(e){
 
 function secDisplay(e){
 	if (firstNum.length) num = operate(firstNum, num, operator).toString();
-	firstNum = num;
-	submitted_num.textContent = firstNum;
-	num = '';
 
 	switch (e.target.textContent){
 		case '+':
@@ -40,6 +37,9 @@ function secDisplay(e){
 		default:
 			operator = '/';
 	}
+	firstNum = num;
+	submitted_num.textContent = `${firstNum} ${e.target.textContent} `;
+	num = '';
 }
 
 
