@@ -32,8 +32,10 @@ active_num.textContent = DEFAULT_DISPLAY;
 
 function primeDisplay(e){
 	console.log(e.target.getAttribute('data-number'))
-	num += e.target.textContent
-	active_num.textContent = num;
+	if (num.length < 11) {
+		num += e.target.textContent
+		active_num.textContent = num;
+	}
 }
 
 function secDisplay(e){
@@ -59,7 +61,7 @@ function secDisplay(e){
 
 
 function result(e){
-	if (firstNum.length){
+	if (firstNum.length && num.length){
 		num = operate(firstNum, num, operator).toString();
 		active_num.textContent = num;
 		firstNum = ''
