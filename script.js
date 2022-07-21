@@ -7,10 +7,25 @@ let active_num = document.getElementById('active-num');
 let submitted_num = document.getElementById('submitted-num');
 let numButtons = Array.from(document.querySelectorAll(`[data-number]`));
 numButtons.forEach(btn => btn.addEventListener('click', primeDisplay));
+let pointBtn = document.getElementById('pointBtn');
+pointBtn.addEventListener('click', primeDisplay);
 let operatorButtons = Array.from(document.querySelectorAll(`[data-operator]`));
 operatorButtons.forEach(btn => btn.addEventListener('click', secDisplay));
 let equalBtn = document.getElementById('equalsBtn');
 equalBtn.addEventListener('click', result)
+let clear = document.getElementById('clear');
+clear.onclick = function (){
+	firstNum = '';
+	num = '';
+	active_num.textContent = DEFAULT_DISPLAY;
+	submitted_num.textContent = ''
+}
+
+let deleteBtn = document.getElementById('delete');
+deleteBtn.addEventListener('click', () => {
+	num = num.slice(0, -1);
+	active_num.textContent = num;
+});
 
 
 active_num.textContent = DEFAULT_DISPLAY;
