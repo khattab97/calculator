@@ -40,22 +40,9 @@ function primeDisplay(e){
 
 function secDisplay(e){
 	if (firstNum.length) num = operate(firstNum, num, operator).toString();
-
-	switch (e.target.textContent){
-		case '+':
-			operator = '+';
-			break;
-		case '-':
-			operator = '-';
-			break;
-		case '×':
-			operator = '*';
-			break;
-		default:
-			operator = '/';
-	}
-	firstNum = num;
-	submitted_num.textContent = `${firstNum} ${e.target.textContent} `;
+	operator = e.target.textContent
+	firstNum = active_num.textContent;
+	submitted_num.textContent = `${firstNum} ${operator} `;
 	num = '';
 }
 
@@ -78,10 +65,12 @@ function operate(num1, num2, operator){
 			return add(num1, num2);
 		case '-':
 			return subtract(num1, num2);
-		case '*':
+		case '×':
 			return multiply(num1, num2);
-		case '/':
-			return divide(num1, num2);
+		case '÷':
+			let res = divide(num1, num2);
+			if(res) return Math.round(res*1000)/1000;
+			alert('Cant Divide By ZERO')
 	}
 }
 
