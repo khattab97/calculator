@@ -16,7 +16,6 @@ body, html {
     flex-direction: column;
     justify-content: right;
     align-items: center;
-    height: 520px;
     width: 400px;
     margin: 25px;
     border-radius: 7px;
@@ -27,23 +26,24 @@ body, html {
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
-    height: 120px;
     width: 360px;
+    min-height: 100px;
     margin: 20px;
     border-radius: 7px;
     padding: 10px 20px;
     background-color: #222426;
     color: white;
+    word-wrap: break-word;
 }
 
 #submitted-num{
-    height: 40px;
+    min-height: 40px;
     width: 100%;
     font-size: 25px;
 }
 
 #active-num{
-    height: 80px;
+    min-height: 60px;
     width: 100%;
     font-size: 50px;
 }
@@ -57,6 +57,7 @@ body, html {
     box-sizing: border-box;
     flex-grow: 1;
     width: 360px;
+    height: 360px;
     border-radius: 5px;
     margin-bottom: 20px;
     display: flex;
