@@ -23,8 +23,7 @@ clear.onclick = function (){
 
 let deleteBtn = document.getElementById('delete');
 deleteBtn.addEventListener('click', () => {
-	num = num.slice(0, -1);
-	active_num.textContent = num;
+	active_num.textContent = active_num.textContent.slice(0, -1);
 });
 
 
@@ -39,7 +38,7 @@ function primeDisplay(e){
 }
 
 function secDisplay(e){
-	if (firstNum.length) num = operate(firstNum, num, operator).toString();
+	if (firstNum.length) active_num.textContent = operate(firstNum, num, operator).toString();
 	operator = e.target.textContent
 	firstNum = active_num.textContent;
 	submitted_num.textContent = `${firstNum} ${operator} `;
@@ -49,10 +48,12 @@ function secDisplay(e){
 
 function result(e){
 	if (firstNum.length && num.length){
+		submitted_num.textContent = `${firstNum} ${operator} ${num} ${e.target.textContent}`;
 		num = operate(firstNum, num, operator).toString();
 		active_num.textContent = num;
-		firstNum = ''
-		submitted_num.textContent = firstNum;
+		firstNum = '';
+		// assign empty string if result = zero
+		if(!+num) num = '';
 	}
 }
 
@@ -69,8 +70,8 @@ function operate(num1, num2, operator){
 			return multiply(num1, num2);
 		case '÷':
 			let res = divide(num1, num2);
-			if(res) return Math.round(res*1000)/1000;
-			alert('Cant Divide By ZERO')
+			if(res === undefined) alert('Cant Divide By ZERO');
+			else return Math.round(res*1000)/1000;
 	}
 }
 
