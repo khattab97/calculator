@@ -105,11 +105,7 @@ button[data-operator]:active, #equalsBtn:hover {
     background-color: #873030;
     color: white;
 }
-#clear:hover {
-    background-color: #8d3e3e;
-}
-
-#delete:hover {
+#clear:hover, #delete:hover {
     background-color: #8d3e3e;
 }
 
